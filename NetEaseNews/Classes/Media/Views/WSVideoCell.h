@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@class WSVideo;
 
 @interface WSVideoCell : UITableViewCell
+
+@property (strong, nonatomic) WSVideo *video;
+
++ (instancetype)videoCellWithTableView:(UITableView *)tableView;
+
++ (CGFloat)rowHeight;
 
 @end

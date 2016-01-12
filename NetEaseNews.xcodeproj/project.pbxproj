@@ -107,6 +107,7 @@
 		651D64F61C4506DD00DAF34E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 651D64941C4506DD00DAF34E /* Assets.xcassets */; };
 		651D64F81C4506E500DAF34E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 651D64F71C4506E500DAF34E /* Info.plist */; };
 		651D64FC1C45077200DAF34E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 651D64FB1C45077200DAF34E /* MBProgressHUD.m */; };
+		651D65221C4518CB00DAF34E /* WSVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 651D65211C4518CB00DAF34E /* WSVideo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -301,6 +302,8 @@
 		651D64F71C4506E500DAF34E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		651D64FA1C45077200DAF34E /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		651D64FB1C45077200DAF34E /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		651D65201C4518CB00DAF34E /* WSVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSVideo.h; sourceTree = "<group>"; };
+		651D65211C4518CB00DAF34E /* WSVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSVideo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -650,6 +653,8 @@
 		651D64071C4506DD00DAF34E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				651D65201C4518CB00DAF34E /* WSVideo.h */,
+				651D65211C4518CB00DAF34E /* WSVideo.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1297,6 +1302,7 @@
 				651D64EC1C4506DD00DAF34E /* WSTopic.m in Sources */,
 				651D649D1C4506DD00DAF34E /* MASCompositeConstraint.m in Sources */,
 				651D64A01C4506DD00DAF34E /* MASLayoutConstraint.m in Sources */,
+				651D65221C4518CB00DAF34E /* WSVideo.m in Sources */,
 				651D64FC1C45077200DAF34E /* MBProgressHUD.m in Sources */,
 				651D64B31C4506DD00DAF34E /* UIImage+MultiFormat.m in Sources */,
 				651D64BC1C4506DD00DAF34E /* WSTabBarController.m in Sources */,
