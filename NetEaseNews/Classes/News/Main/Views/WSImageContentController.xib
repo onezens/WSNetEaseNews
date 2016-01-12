@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WSImageContentController">
+            <connections>
+                <outlet property="collectionView" destination="Jcn-qr-Dr4" id="GlQ-lG-00V"/>
+                <outlet property="flowLayout" destination="TEJ-sF-x7Y" id="daS-dn-oiO"/>
+                <outlet property="replyCount" destination="3Jz-Qo-Jvg" id="50k-Jq-o6o"/>
+                <outlet property="view" destination="iN0-l3-epB" id="lYE-DP-ILd"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a88-My-EDt">
+                    <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdb-YG-axm">
+                            <rect key="frame" x="267" y="2" width="50" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="34C-Fu-YOd"/>
+                                <constraint firstAttribute="height" constant="45" id="foY-6c-OzZ"/>
+                            </constraints>
+                            <state key="normal" image="203"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZJ-4p-me4">
+                            <rect key="frame" x="317" y="2" width="50" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="5Zc-YF-r0L"/>
+                                <constraint firstAttribute="width" constant="50" id="Ke8-Sk-lpv"/>
+                            </constraints>
+                            <state key="normal" image="reader_share"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.039215686270000001" green="0.035294117649999998" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Pdb-YG-axm" secondAttribute="bottom" constant="2" id="6Zq-Ja-O94"/>
+                        <constraint firstItem="wZJ-4p-me4" firstAttribute="top" secondItem="a88-My-EDt" secondAttribute="top" constant="2" id="BFi-Nh-biH"/>
+                        <constraint firstItem="Pdb-YG-axm" firstAttribute="top" secondItem="a88-My-EDt" secondAttribute="top" constant="2" id="BRR-Gd-CwF"/>
+                        <constraint firstAttribute="bottom" secondItem="wZJ-4p-me4" secondAttribute="bottom" constant="2" id="Q7y-HA-4An"/>
+                        <constraint firstItem="wZJ-4p-me4" firstAttribute="leading" secondItem="Pdb-YG-axm" secondAttribute="trailing" id="h3d-rU-nHw"/>
+                        <constraint firstAttribute="trailing" secondItem="wZJ-4p-me4" secondAttribute="trailing" constant="8" id="hwC-MR-TDJ"/>
+                        <constraint firstAttribute="height" constant="49" id="llP-kc-22U"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YhU-QG-c4y">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQG-dy-d6a">
+                            <rect key="frame" x="0.0" y="14" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="Mcc-TE-uz8"/>
+                                <constraint firstAttribute="height" constant="50" id="o2e-0d-vf6"/>
+                            </constraints>
+                            <state key="normal" image="weather_back"/>
+                            <connections>
+                                <action selector="backItem" destination="-1" eventType="touchUpInside" id="8m5-EW-4yW"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Jz-Qo-Jvg">
+                            <rect key="frame" x="299" y="20" width="76" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="76" id="abA-hJ-xi6"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <inset key="titleEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="1000跟帖" backgroundImage="contentview_commentbacky"/>
+                            <connections>
+                                <action selector="commentBtn" destination="-1" eventType="touchUpInside" id="QBV-bo-ACf"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="3Jz-Qo-Jvg" secondAttribute="trailing" id="9g8-eu-X9F"/>
+                        <constraint firstItem="YQG-dy-d6a" firstAttribute="leading" secondItem="YhU-QG-c4y" secondAttribute="leading" id="NhP-vq-Pyl"/>
+                        <constraint firstAttribute="bottom" secondItem="YQG-dy-d6a" secondAttribute="bottom" id="jfY-jQ-yHs"/>
+                        <constraint firstAttribute="height" constant="64" id="qf2-mW-fAD"/>
+                        <constraint firstAttribute="bottom" secondItem="3Jz-Qo-Jvg" secondAttribute="bottom" id="w8a-Xi-UyN"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Jcn-qr-Dr4">
+                    <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TEJ-sF-x7Y">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" red="0.039215686274509803" green="0.035294117647058823" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Jcn-qr-Dr4" firstAttribute="top" secondItem="YhU-QG-c4y" secondAttribute="bottom" id="68R-uf-ZUT"/>
+                <constraint firstAttribute="trailing" secondItem="YhU-QG-c4y" secondAttribute="trailing" id="ABg-Dx-2Yu"/>
+                <constraint firstItem="a88-My-EDt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="H5r-Lz-lwn"/>
+                <constraint firstItem="YhU-QG-c4y" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="QNj-zt-Ke2"/>
+                <constraint firstAttribute="trailing" secondItem="a88-My-EDt" secondAttribute="trailing" id="WNX-Jo-9Gu"/>
+                <constraint firstAttribute="bottom" secondItem="a88-My-EDt" secondAttribute="bottom" id="XFN-bj-g8o"/>
+                <constraint firstItem="a88-My-EDt" firstAttribute="top" secondItem="Jcn-qr-Dr4" secondAttribute="bottom" id="Xmo-jJ-7jT"/>
+                <constraint firstItem="Jcn-qr-Dr4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cYS-WD-hXn"/>
+                <constraint firstAttribute="trailing" secondItem="Jcn-qr-Dr4" secondAttribute="trailing" id="ljX-OC-rBz"/>
+                <constraint firstItem="YhU-QG-c4y" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nYl-m2-0iZ"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="281.5" y="136.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="203" width="80" height="80"/>
+        <image name="contentview_commentbacky" width="31" height="44"/>
+        <image name="reader_share" width="50" height="45"/>
+        <image name="weather_back" width="50" height="50"/>
+    </resources>
+</document>

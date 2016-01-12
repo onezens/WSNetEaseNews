@@ -1,0 +1,12 @@
+
+
+
+#ifdef __OBJC__
+
+#define kScreenSize [UIScreen mainScreen].bounds
+#define kScreenWidth kScreenSize.size.width
+#define kScreenHeight kScreenSize.size.height
+#define kTabBarHeight 64
+#define kTitleFont [UIFont systemFontOfSize:15]
+#define kDetailFont [UIFont systemFontOfSize:13]
+#endif 

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>tid</key>
+		<string>T1348647853363</string>
+		<key>tname</key>
+		<string>头条</string>
+	</dict>
+	<dict>
+		<key>tname</key>
+		<string>娱乐</string>
+		<key>tid</key>
+		<string>T1348648517839</string>
+	</dict>
+	<dict>
+		<key>tid</key>
+		<string>T1350383429665</string>
+		<key>tname</key>
+		<string>轻松一刻</string>
+	</dict>
+	<dict>
+		<key>tid</key>
+		<string>T1348649079062</string>
+		<key>tname</key>
+		<string>体育</string>
+	</dict>
+	<dict>
+		<key>tid</key>
+		<string>T1348649580692</string>
+		<key>tname</key>
+		<string>科技</string>
+	</dict>
+	<dict>
+		<key>tid</key>
+		<string>T1348648141035</string>
+		<key>tname</key>
+		<string>军事</string>
+	</dict>
+	<dict>
+		<key>tid</key>
+		<string>T1348648756099</string>
+		<key>tname</key>
+		<string>财经</string>
+	</dict>
+</array>
+</plist>
