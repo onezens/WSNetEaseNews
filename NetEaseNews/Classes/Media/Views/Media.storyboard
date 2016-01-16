@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Bfz-sZ-Te0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Bfz-sZ-Te0">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -69,7 +69,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="277" sectionHeaderHeight="10" sectionFooterHeight="1" id="hOb-5e-HW9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.865234375" green="0.5" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="mGq-Cl-M39">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="85"/>
@@ -105,7 +105,7 @@
                                                 <constraint firstAttribute="height" constant="20" id="2gx-WF-iVv"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -140,7 +140,7 @@
                                                 <constraint firstAttribute="height" constant="20" id="xp7-pj-rNT"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -176,7 +176,7 @@
                                                 <constraint firstAttribute="height" constant="20" id="k8f-zO-xAV"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -215,7 +215,7 @@
                                                 <constraint firstAttribute="height" constant="20" id="btK-hG-zZu"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -256,7 +256,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="videoCell" rowHeight="280" id="A3x-UY-OuW" customClass="WSVideoCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="videoCell" rowHeight="280" id="A3x-UY-OuW" customClass="WSVideoCell">
                                 <rect key="frame" x="0.0" y="134.5" width="320" height="280"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A3x-UY-OuW" id="M7y-5p-IBf">
@@ -266,7 +266,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsJ-vd-hXh">
                                             <rect key="frame" x="8" y="8" width="42" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uy1-3h-0kp">
@@ -289,17 +289,6 @@
                                             </constraints>
                                             <state key="normal" image="icon_share"/>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rg3-rN-dhe">
-                                            <rect key="frame" x="89" y="242" width="65" height="22"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="22" id="4pU-2C-74x"/>
-                                                <constraint firstAttribute="width" constant="65" id="O84-QL-eON"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <state key="normal" title="123123" image="audionews_indexheader_recent">
-                                                <color key="titleColor" red="1" green="0.73087660850000002" blue="0.79122232569999995" alpha="1" colorSpace="calibratedRGB"/>
-                                            </state>
-                                        </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i1r-Mi-udA">
                                             <rect key="frame" x="208" y="238" width="63" height="30"/>
                                             <constraints>
@@ -312,11 +301,22 @@
                                                 <color key="titleColor" red="1" green="0.73087660850000002" blue="0.79122232569999995" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osx-en-S53">
-                                            <rect key="frame" x="16" y="242" width="65" height="22"/>
+                                        <button opaque="NO" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osx-en-S53">
+                                            <rect key="frame" x="16" y="241" width="65" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="22" id="WyM-dw-PH5"/>
                                                 <constraint firstAttribute="width" constant="65" id="oPS-VR-Mfh"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <state key="normal" title="123123" image="audionews_indexheader_recent">
+                                                <color key="titleColor" red="1" green="0.73087660850000002" blue="0.79122232569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rg3-rN-dhe">
+                                            <rect key="frame" x="89" y="241" width="65" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="4pU-2C-74x"/>
+                                                <constraint firstAttribute="width" constant="65" id="O84-QL-eON"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <state key="normal" title="123123" image="audionews_indexheader_recent">
@@ -340,10 +340,12 @@
                                         <constraint firstAttribute="trailing" secondItem="DH4-5g-IBn" secondAttribute="trailing" constant="8" id="pgD-nh-7XB"/>
                                         <constraint firstItem="PsJ-vd-hXh" firstAttribute="leading" secondItem="M7y-5p-IBf" secondAttribute="leading" constant="8" id="ss2-iq-pIG"/>
                                         <constraint firstItem="osx-en-S53" firstAttribute="centerY" secondItem="i1r-Mi-udA" secondAttribute="centerY" id="xaI-d5-XRn"/>
-                                        <constraint firstItem="rg3-rN-dhe" firstAttribute="leading" secondItem="osx-en-S53" secondAttribute="trailing" constant="8" id="yXj-ZK-JLg"/>
+                                        <constraint firstItem="rg3-rN-dhe" firstAttribute="leading" secondItem="osx-en-S53" secondAttribute="trailing" id="yXj-ZK-JLg"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="playCountBtnWidth" destination="O84-QL-eON" id="SxI-rx-syX"/>
+                                    <outlet property="timeBtnWidth" destination="oPS-VR-Mfh" id="sRt-Ek-7Fh"/>
                                     <outlet property="videoCommentBtn" destination="i1r-Mi-udA" id="lEY-qf-dTU"/>
                                     <outlet property="videoDetailLbl" destination="uy1-3h-0kp" id="ZDp-x1-Atr"/>
                                     <outlet property="videoImgView" destination="QDZ-xu-Ozs" id="tO1-ht-fWO"/>
@@ -368,6 +370,7 @@
                         <outlet property="videoList3Btn" destination="AcA-39-0A1" id="iXk-30-rvX"/>
                         <outlet property="videoList3TitleLbl" destination="ujl-IU-ybc" id="ca7-1h-Ahz"/>
                         <outlet property="videoList4Btn" destination="q52-Q5-w8Y" id="1VM-5I-kEZ"/>
+                        <outlet property="videoList4TitleLbl" destination="NS2-bW-IE2" id="I2U-sd-jPC"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aIY-NS-cfH" userLabel="First Responder" sceneMemberID="firstResponder"/>

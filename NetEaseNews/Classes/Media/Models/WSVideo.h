@@ -13,7 +13,7 @@
 @interface WSVideo : YHCoderObject
 
 /**回复人数*/
-@property (copy, nonatomic) NSString *replyCount;
+@property (assign, nonatomic) NSInteger replyCount;
 /**视频来源*/
 @property (copy, nonatomic) NSString *videosource;
 /**视频高清url*/
@@ -23,7 +23,7 @@
 /**视频名称*/
 @property (copy, nonatomic) NSString *title;
 /**视频播放人数*/
-@property (copy, nonatomic) NSString *playCount;
+@property (assign, nonatomic) NSInteger playCount;
 /**"replyBoard": "videonews_bbs"*/
 @property (copy, nonatomic) NSString *replyBoard;
 @property (copy, nonatomic) NSString *replyid;
@@ -32,8 +32,8 @@
 /**视频播放的url*/
 @property (copy, nonatomic) NSString *mp4_url;
 /**视频长度*/
-@property (copy, nonatomic) NSString *length;
-@property (copy, nonatomic) NSString *playersize;
+@property (assign, nonatomic) NSInteger length;
+@property (assign, nonatomic) NSInteger playersize;
 @property (copy, nonatomic) NSString *vid;
 @property (copy, nonatomic) NSString *m3u8_url;
 @property (copy, nonatomic) NSString *ptime;

@@ -12,7 +12,9 @@
 #import "WSVideo.h"
 #import "WSVideoCell.h"
 #import "UIButton+WebCache.h"
+#import "NSString+WS.h"
 #import "YiRefreshFooter.h"
+#import "MoviePlayerViewController.h"
 
 @interface WSVideoController ()
 
@@ -34,6 +36,8 @@
 @property (strong, nonatomic) NSArray *videoSidList;
 
 @property (assign, nonatomic) NSInteger videoIndex;
+
+@property (strong, nonatomic) UIWindow *videoWin;
 
 @end
 
@@ -107,6 +111,31 @@
     lbl.text = dict[@"title"];
 }
 
+#pragma mark - tableView delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    WSVideo *video = self.videos[indexPath.section];
+    
+    NSLog(@"%@",video.mp4_url);
+    
+    MoviePlayerViewController *playerVC = [[MoviePlayerViewController alloc] init];
+    
+    UIViewController *vc = [[UIViewController alloc] init];
+    self.videoWin.rootViewController = vc;
+    UIWindow *keyWin = [UIApplication sharedApplication].keyWindow;
+    
+    typeof(self) __weak weakSelf = self;
+    playerVC.url = video.mp4_url;
+    playerVC.playFinished = ^(){
+        
+        weakSelf.videoWin.rootViewController = nil;
+        [keyWin makeKeyAndVisible];
+    };
+    [self.videoWin makeKeyAndVisible];
+    [vc presentViewController:playerVC animated:YES completion:nil];
+}
+
 #pragma mark - tableview datasource
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -144,6 +173,14 @@
 }
 
 #pragma mark - lazyloadind
+
+- (UIWindow *)videoWin{
+    
+    if (!_videoWin) {
+        _videoWin = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    }
+    return _videoWin;
+}
 
 - (NSMutableArray *)videos{
     

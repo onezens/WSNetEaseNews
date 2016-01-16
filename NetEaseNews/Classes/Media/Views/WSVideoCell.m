@@ -9,6 +9,7 @@
 #import "WSVideoCell.h"
 #import "WSVideo.h"
 #import "UIImageView+WebCache.h"
+#import "NSString+WS.h"
 
 @interface WSVideoCell ()
 
@@ -18,6 +19,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *videoTimeBtn;
 @property (weak, nonatomic) IBOutlet UIButton *videoLookBtn;
 @property (weak, nonatomic) IBOutlet UIButton *videoCommentBtn;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *timeBtnWidth;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *playCountBtnWidth;
 
 
 @end
@@ -32,9 +36,14 @@
     self.videoTitleLbl.text = video.title;
 //    self.videoImgView.contentMode = UIViewContentModeCenter;
     [self.videoImgView sd_setImageWithURL:[NSURL URLWithString:video.cover] placeholderImage:[UIImage imageNamed:@"cell_image_background"]];
-//    [self.videoTimeBtn setTitle:video.ptime forState:UIControlStateNormal];
-//    [self.videoCommentBtn setTitle:video.replyCount forState:UIControlStateNormal];
-//    [self.videoLookBtn setTitle:video.playCount forState:UIControlStateNormal];
+    
+    [self.videoCommentBtn setTitle:[NSString stringWithFormat:@"%ld",video.replyCount] forState:UIControlStateNormal];
+    [self.videoLookBtn setTitle:[NSString stringWithFormat:@"%ld",video.playCount] forState:UIControlStateNormal];
+    CGFloat t = (float)video.length / 60;
+    NSString *time = [NSString stringWithFormat:@"%02.f:%02.f",t,(t-(int)t)*100];
+    [self.videoTimeBtn setTitle:time forState:UIControlStateNormal];
+    self.timeBtnWidth.constant = [self.videoTimeBtn.titleLabel.text sizeOfFont:self.videoTimeBtn.titleLabel.font textMaxSize:CGSizeMake(125, 21)].width + 25;
+    self.playCountBtnWidth.constant = [self.videoLookBtn.titleLabel.text sizeOfFont:self.videoLookBtn.titleLabel.font textMaxSize:CGSizeMake(125, 21)].width + 30;
     
 }
 
@@ -44,9 +53,12 @@
 }
 
 
+
+
 + (instancetype)videoCellWithTableView:(UITableView *)tableView{
     
     WSVideoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"videoCell"];
+
     
     return cell;
 }
