@@ -17,10 +17,11 @@
 #import "WSNewsCell.h"
 #import "WSRollController.h"
 #import "MBProgressHUD.h"
+#import "SDImageCache.h"
 
 @interface WSNewsController ()
 {
-
+    
     YiRefreshHeader *refreshHeader;
     YiRefreshFooter *refreshFooter;
     NSMutableArray *_jsonNews;
@@ -42,7 +43,7 @@
     
     [super viewDidLoad];
     
-
+    
     
     typeof(self) __weak weakSelf = self;
     
@@ -113,8 +114,9 @@
         
         weakSelf.index = 0;
         [weakSelf loadMoreDataCount:0];
+        [[SDImageCache sharedImageCache] clearMemory];
         
-//        NSLog(@"刷新数据");
+        //        NSLog(@"刷新数据");
         
     };
     
@@ -125,7 +127,7 @@
     refreshFooter.beginRefreshingBlock = ^(){
         
         [weakSelf loadMoreDataCount:weakSelf.index];
-//        NSLog(@"加载更多数据");
+        //        NSLog(@"加载更多数据");
     };
     
     [refreshHeader beginRefreshing];
@@ -144,7 +146,7 @@
         if (dataArr.count > 0) {
             
             if (weakSelf.index == 0) [weakSelf.jsonNews removeAllObjects];
-
+            
             [weakSelf.jsonNews addObjectsFromArray:dataArr];
             
             weakSelf.index += 20;
@@ -165,17 +167,17 @@
             [weakFooter endRefreshing];
         });
     }];
-        
- 
     
-        
-        
-
+    
+    
+    
+    
+    
 }
 
 - (NSString *)newsURL{
     
-   return [self.channelUrl stringByReplacingOccurrencesOfString:self.channelUrl.lastPathComponent withString:[NSString stringWithFormat:@"%ld-%ld.html?from=toutiao&passport=tg%%2BXeARESp%%2BKk1cvff3CYYHneQ4Vgz8zRIWyqxFlJl4%%3D&devId=vLWbfIXxCa1CK9%%2B20Q0f98IOSn9ZTn2pjLRXOOBn3fttg3OsEQzfSL238z3USCkJ&size=20&version=5.5.0&spever=false&net=wifi&lat=&lon=&ts=1451223862&sign=W1v%%2BccS4kqTPNo1XoI1hRA7NJTZ9WFoR3TGwx3F1fDB48ErR02zJ6%%2FKXOnxX046I&encryption=1&canal=appstore",self.index, self.index+20]];
+    return [self.channelUrl stringByReplacingOccurrencesOfString:self.channelUrl.lastPathComponent withString:[NSString stringWithFormat:@"%ld-%ld.html?from=toutiao&passport=tg%%2BXeARESp%%2BKk1cvff3CYYHneQ4Vgz8zRIWyqxFlJl4%%3D&devId=vLWbfIXxCa1CK9%%2B20Q0f98IOSn9ZTn2pjLRXOOBn3fttg3OsEQzfSL238z3USCkJ&size=20&version=5.5.0&spever=false&net=wifi&lat=&lon=&ts=1451223862&sign=W1v%%2BccS4kqTPNo1XoI1hRA7NJTZ9WFoR3TGwx3F1fDB48ErR02zJ6%%2FKXOnxX046I&encryption=1&canal=appstore",self.index, self.index+20]];
 }
 
 #pragma mark - tableView delegate
@@ -202,7 +204,7 @@
     imageContent.photosetID = photoid;
     imageContent.replycount = count;
     [self.navigationController pushViewController:imageContent animated:YES];
-
+    
 }
 
 

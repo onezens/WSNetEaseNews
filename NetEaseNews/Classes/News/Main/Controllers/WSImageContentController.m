@@ -121,5 +121,7 @@ static NSString *CellID = @"imageCell_co";
 -(void)dealloc{
     
 //    NSLog(@"%s",__func__);
+    
+     [[SDImageCache sharedImageCache] setValue:nil forKey:@"memCache"];
 }
 @end

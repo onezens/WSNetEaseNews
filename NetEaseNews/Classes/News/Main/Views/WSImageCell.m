@@ -35,6 +35,8 @@
     self.imageCountLbl.text = [NSString stringWithFormat:@"%ld/%ld",indexPath.item+1,self.imageContent.photos.count];
     self.detailLbl.text = [self.imageContent.photos[indexPath.item] note];
     
+
+    
     [self.imageView sd_setImageWithURL:[NSURL URLWithString:[self.imageContent.photos[indexPath.item] imgurl]] placeholderImage:[UIImage imageNamed:@"contentview_imagebg_logo"] options:SDWebImageProgressiveDownload | SDWebImageHighPriority completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
     }];
     

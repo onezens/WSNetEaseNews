@@ -836,16 +836,16 @@
 		651D64181C4506DD00DAF34E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				651D641F1C4506DD00DAF34E /* WSNewsContainerController.h */,
+				651D64201C4506DD00DAF34E /* WSNewsContainerController.m */,
+				651D64211C4506DD00DAF34E /* WSNewsController.h */,
+				651D64221C4506DD00DAF34E /* WSNewsController.m */,
 				651D64191C4506DD00DAF34E /* WSCommentController.h */,
 				651D641A1C4506DD00DAF34E /* WSCommentController.m */,
 				651D641B1C4506DD00DAF34E /* WSContentController.h */,
 				651D641C1C4506DD00DAF34E /* WSContentController.m */,
 				651D641D1C4506DD00DAF34E /* WSImageContentController.h */,
 				651D641E1C4506DD00DAF34E /* WSImageContentController.m */,
-				651D641F1C4506DD00DAF34E /* WSNewsContainerController.h */,
-				651D64201C4506DD00DAF34E /* WSNewsContainerController.m */,
-				651D64211C4506DD00DAF34E /* WSNewsController.h */,
-				651D64221C4506DD00DAF34E /* WSNewsController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
