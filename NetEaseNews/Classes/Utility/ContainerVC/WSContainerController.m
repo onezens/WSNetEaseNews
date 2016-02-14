@@ -77,6 +77,8 @@ static NSString *CellID = @"ControllerCell";
     [super viewDidLoad];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
+    //禁用滚动到最顶部的属性
+    self.collectionView.scrollsToTop = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -121,7 +123,7 @@ static NSString *CellID = @"ControllerCell";
     
     [container setViewControllers:viewControllers];
     [container setParentController:vc];
-    
+
     __block NSMutableArray *arrM = [NSMutableArray arrayWithCapacity:viewControllers.count];
     [viewControllers enumerateObjectsUsingBlock:^(UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         

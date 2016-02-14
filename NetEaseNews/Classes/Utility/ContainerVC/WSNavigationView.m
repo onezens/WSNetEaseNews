@@ -98,6 +98,8 @@
     nav.itemClickBlock = itemClick;
     
     nav.items = items;
+    ////禁用滚动到最顶部的属性
+    nav.scrollsToTop = NO;
 
     return nav;
 }
