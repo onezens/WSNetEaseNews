@@ -60,7 +60,6 @@ static NSString *CellID = @"imageCell_co";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBarHidden = YES;
     
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
@@ -73,6 +72,11 @@ static NSString *CellID = @"imageCell_co";
     [self.collectionView registerNib:nib forCellWithReuseIdentifier:CellID];
     
     [self loadData];
+}
+- (void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)setImageContent:(WSImageContent *)imageContent{

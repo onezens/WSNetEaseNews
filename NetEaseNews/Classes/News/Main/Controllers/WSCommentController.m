@@ -64,7 +64,6 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    self.navigationController.navigationBarHidden = YES;
     self.tableView.estimatedRowHeight = 100;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -97,10 +96,13 @@
         
     };
     
-    
-   
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
+}
 
 - (void)loadDataWithID:(NSString *)ID commentType:(WSCommentType)type{
     

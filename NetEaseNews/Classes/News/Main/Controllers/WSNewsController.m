@@ -43,8 +43,6 @@
     
     [super viewDidLoad];
     
-    
-    
     typeof(self) __weak weakSelf = self;
     
     NSArray *ads = nil;

@@ -30,17 +30,27 @@
     
     [super viewDidLoad];
     
-    self.navigationController.navigationBarHidden = YES;
     self.bottomView.hidden = YES;
     self.topCommentBtn.hidden = YES;
     
     self.webView.delegate = self;
-    
     [self.webView loadHTMLString:@"<html><body bgcolor=\"#F9F6FA\"></body></html>" baseURL:nil];
     
     [MBProgressHUD showHUDAddedTo:self.webView animated:YES];
     
     [self loadData];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBarHidden = NO;
 }
 
 - (void)loadData {
@@ -136,11 +146,7 @@
     [MBProgressHUD hideHUDForView:self.webView animated:YES];
 }
 
-- (void)viewWillDisappear:(BOOL)animated{
-    
-    [super viewWillDisappear:animated];
-    self.navigationController.navigationBarHidden = NO;
-}
+
 - (IBAction)backItem {
     
     [self.navigationController popViewControllerAnimated:YES];
