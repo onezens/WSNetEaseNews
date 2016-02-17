@@ -107,7 +107,6 @@
 		651D65221C4518CB00DAF34E /* WSVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 651D65211C4518CB00DAF34E /* WSVideo.m */; };
 		652794201C703CD000BBFDFA /* NSString+WS.m in Sources */ = {isa = PBXBuildFile; fileRef = 6527941C1C703CD000BBFDFA /* NSString+WS.m */; };
 		652794211C703CD000BBFDFA /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6527941F1C703CD000BBFDFA /* UIView+Frame.m */; };
-		652794281C703DDC00BBFDFA /* ._.DS_Store in Resources */ = {isa = PBXBuildFile; fileRef = 652794251C703DDC00BBFDFA /* ._.DS_Store */; };
 		652794291C703DDC00BBFDFA /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 652794271C703DDC00BBFDFA /* NSArray+Log.m */; };
 		65987C951C4A278400A69EE4 /* MoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65987C941C4A278400A69EE4 /* MoviePlayerViewController.m */; };
 		65987CD01C4A28A900A69EE4 /* @$91X`{7~B}~XP0C[DG~XDI.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 65987C971C4A28A800A69EE4 /* @$91X`{7~B}~XP0C[DG~XDI.jpg */; };
@@ -360,7 +359,6 @@
 		6527941E1C703CD000BBFDFA /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		6527941F1C703CD000BBFDFA /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		652794231C703CFA00BBFDFA /* PrefixHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.h; sourceTree = "<group>"; };
-		652794251C703DDC00BBFDFA /* ._.DS_Store */ = {isa = PBXFileReference; lastKnownFileType = file; path = ._.DS_Store; sourceTree = "<group>"; };
 		652794261C703DDC00BBFDFA /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
 		652794271C703DDC00BBFDFA /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
 		65987C931C4A278400A69EE4 /* MoviePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviePlayerViewController.h; sourceTree = "<group>"; };
@@ -1164,7 +1162,6 @@
 		652794241C703DDC00BBFDFA /* Log */ = {
 			isa = PBXGroup;
 			children = (
-				652794251C703DDC00BBFDFA /* ._.DS_Store */,
 				652794261C703DDC00BBFDFA /* NSArray+Log.h */,
 				652794271C703DDC00BBFDFA /* NSArray+Log.m */,
 			);
@@ -1345,7 +1342,6 @@
 				65987D071C4A28A900A69EE4 /* U5I%NZFJ7[DNM)AI(~OMOZD.jpg in Resources */,
 				65987CFD1C4A28A900A69EE4 /* pauseBtn.png in Resources */,
 				65987CF71C4A28A900A69EE4 /* logo.xunlei.com.png in Resources */,
-				652794281C703DDC00BBFDFA /* ._.DS_Store in Resources */,
 				65987CD71C4A28A900A69EE4 /* iconfont-back.png in Resources */,
 				65987CE11C4A28A900A69EE4 /* logo.hunantv.com.png in Resources */,
 				65987CF21C4A28A900A69EE4 /* logo.sina.com@2x.png in Resources */,
