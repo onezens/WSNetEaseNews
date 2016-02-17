@@ -90,6 +90,7 @@
     
     //设置刷新
     [self setRefreshView];
+    
 }
 
 - (void)refreshData {
@@ -113,8 +114,6 @@
         weakSelf.index = 0;
         [weakSelf loadMoreDataCount:0];
         [[SDImageCache sharedImageCache] clearMemory];
-        
-        //        NSLog(@"刷新数据");
         
     };
     
@@ -165,12 +164,6 @@
             [weakFooter endRefreshing];
         });
     }];
-    
-    
-    
-    
-    
-    
 }
 
 - (NSString *)newsURL{
@@ -249,8 +242,6 @@
 
 #pragma mark - lazy loading
 
-
-
 - (NSMutableArray *)jsonNews{
     
     if (!_jsonNews) {
@@ -269,6 +260,7 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"News" bundle:nil];
     
     WSNewsController *newsVC = [sb instantiateViewControllerWithIdentifier:@"newsController"];
+    
     
     return newsVC;
 }

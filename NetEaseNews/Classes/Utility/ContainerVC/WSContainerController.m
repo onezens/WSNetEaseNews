@@ -104,10 +104,7 @@ static NSString *CellID = @"ControllerCell";
     
 }
 
-
 #pragma mark - init
-
-
 
 - (void)setParentController:(UIViewController *)parentController{
     
@@ -133,7 +130,6 @@ static NSString *CellID = @"ControllerCell";
     
     [container navigationView].items = arrM.copy;
     [container navigationView].selectedItemIndex = 0;
-
     
     return container;
 }
@@ -159,7 +155,6 @@ static NSString *CellID = @"ControllerCell";
         collectionView.showsHorizontalScrollIndicator = NO;
         [self.view addSubview:collectionView];
         
-        
         //添加导航view
         typeof(self) __weak weakObj= self;
         WSNavigationView *view = [WSNavigationView navigationViewWithItems:nil itemClick:^(NSInteger selectedIndex) {
@@ -175,11 +170,5 @@ static NSString *CellID = @"ControllerCell";
     }
     return self;
 }
-
-- (void)dealloc{
-    
-    NSLog(@"%s",__func__);
-}
-
 
 @end

@@ -36,9 +36,6 @@ static id _instance;
 + (NSURLSessionDataTask *)GETJSON:(NSString *)urlStr progress:(progressBlock)progress success:(successBlock)success failure: (failureBlock)failure{
     
     WSGetDataTool *tool = [self shareGetDataTool];
-    
-//    urlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    
     //设置json解析的可以接收的服务器返回类型(Content-Type)
     AFJSONResponseSerializer *response = [AFJSONResponseSerializer serializer];
     NSSet *set = [NSSet setWithArray:@[@"text/html", @"application/json",@"*/*"]];

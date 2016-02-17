@@ -7,7 +7,6 @@
 //
 
 #import "WSNewsContainerController.h"
-#import "UIView+Frame.h"
 #import "WSContainerController.h"
 #import "WSNewsController.h"
 #import "WSChannel.h"
@@ -24,7 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        
+    
+    //设置新闻控制器
     NSMutableArray *vcs = [NSMutableArray arrayWithCapacity:self.news.count];
     
     for (WSChannel *ch in self.news) {
