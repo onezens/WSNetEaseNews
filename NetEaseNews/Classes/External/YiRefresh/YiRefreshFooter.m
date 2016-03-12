@@ -58,7 +58,10 @@
     // 进入刷新状态
     if ((currentPostion>(contentHeight-scrollFrameHeight))&&(contentHeight>scrollFrameHeight)) {
         [self beginRefreshing];
+        return;
     }
+    NSLog(@"%d, %f, %f,%f",currentPostion,contentHeight-scrollFrameHeight,contentHeight, scrollFrameHeight);
+    
 }
 
 /**
@@ -71,7 +74,9 @@
         [activityView startAnimating];
         //        设置刷新状态_scrollView的位置
         [UIView animateWithDuration:0.3 animations:^{
+            NSLog(@"%@", NSStringFromUIEdgeInsets(_scrollView.contentInset));
             _scrollView.contentInset=UIEdgeInsetsMake(0, 0, footerHeight, 0);
+            footerView.hidden = false;
         }];
         //        block回调
         _beginRefreshingBlock();
@@ -87,8 +92,8 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [UIView animateWithDuration:0.3 animations:^{
             [activityView stopAnimating];
-            _scrollView.contentInset=UIEdgeInsetsMake(0, 0, 0, 0);
-            footerView.frame=CGRectMake(0, contentHeight, [[UIScreen mainScreen] bounds].size.width, footerHeight);
+            _scrollView.contentInset= self.autoAdjustScrollView ?  UIEdgeInsetsMake(64, 0, 49, 0) : UIEdgeInsetsMake(0, 0, 0, 0);
+            footerView.hidden = true;
         }];
     });
 }

@@ -17,6 +17,10 @@ typedef void (^BeginRefreshingBlock)(void);
 @interface YiRefreshFooter : NSObject
 @property(nonatomic,strong) UIScrollView *scrollView;
 
+
+@property(nonatomic,assign) BOOL autoAdjustScrollView;
+
+
 /**
  *  callback when refreshing
  */
@@ -36,5 +40,7 @@ typedef void (^BeginRefreshingBlock)(void);
  *  end refresh
  */
 -(void)endRefreshing;
+
+
 
 @end
