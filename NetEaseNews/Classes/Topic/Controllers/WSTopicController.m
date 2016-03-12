@@ -28,52 +28,48 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
     self.topicIndex = 0;
-    
     [self loadDataWithCache:YES];
  
     typeof(self) __weak weakSelf = self;
     YiRefreshFooter *refresh = [[YiRefreshFooter alloc] init];
     refresh.scrollView = self.tableView;
+    refresh.autoAdjustScrollView = true;
     [refresh footer];
     refresh.beginRefreshingBlock = ^(){
       
         [weakSelf loadDataWithCache:NO];
     };
     _refreshFooter = refresh;
+    self.tableView.tableFooterView = [[UIView alloc] init];
 }
 
 - (void)loadDataWithCache:(BOOL)cache{
     
     typeof(self) __weak weakSelf = self;
-    
+        
     [WSTopic topicWithIndex:self.topicIndex isCache:cache getDataSuccess:^(NSArray *dataArr) {
         
         if (dataArr.count == 0) {
             NSLog(@"没有更多数据");
+            [weakSelf.refreshFooter endRefreshing];
             return ;
         }
-        
+        //移除掉缓存
         if(weakSelf.topicIndex == 0) [weakSelf.topics removeAllObjects];
-        
         [weakSelf.topics addObjectsFromArray:dataArr];
-        
         [weakSelf.tableView reloadData];
-        
-        if(dataArr.count>0) weakSelf.topicIndex += 10;
+        [weakSelf.refreshFooter endRefreshing];
+        if(dataArr.count>0) weakSelf.topicIndex += dataArr.count;
         
     } getDataFaileure:^(NSError *error) {
         
         NSLog(@"%@",error);
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            
-            [weakSelf.refreshFooter endRefreshing];
-            
-        });
+        [weakSelf.refreshFooter endRefreshing];
+
     }];
+    
+    
 }
 
 
@@ -100,9 +96,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     
     WSTopicCell *cell = [WSTopicCell topicCellWithTableView:tableView];
     
