@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "WSTabBarController.h"
+#import "SDImageCache.h"
 
 @interface AppDelegate ()
 
@@ -27,7 +28,17 @@
     
     [self.window makeKeyAndVisible];
     
+    [self initProject];
+    
     return YES;
+}
+
+- (void)initProject {
+    
+    [SDImageCache sharedImageCache].maxCacheAge = 7 * 24 * 60 * 60; //7天
+    [SDImageCache sharedImageCache].maxCacheSize = 1024 * 1024 * 100; //100MB
+    [SDImageCache sharedImageCache].maxMemoryCost = 1024 * 1024 * 40; //40MB
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

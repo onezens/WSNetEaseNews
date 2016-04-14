@@ -22,7 +22,6 @@
         
         NSMutableArray *arrM = [NSMutableArray array];
         for (NSDictionary *dict in dictArr) {
-            
             WSSearchResult *result = [WSSearchResult resultWithDict:dict];
             [arrM addObject:result];
         }
