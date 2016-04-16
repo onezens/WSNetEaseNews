@@ -13,6 +13,8 @@
 #import "UIImageView+WebCache.h"
 #import "YiRefreshFooter.h"
 
+CGFloat kTableViewTopContanst = 134; //tableview顶部默认的约束值
+
 @interface WSTopDetailController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tablviewTop;
@@ -27,7 +29,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *detailLbl;
 @property (weak, nonatomic) IBOutlet UIImageView *bgImgView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
 @property (strong, nonatomic) NSMutableArray *topicDeails;
 @property (assign, nonatomic) NSInteger topicIndex;
 @property (strong, nonatomic) YiRefreshFooter *refreshFooter;
@@ -48,23 +49,21 @@
         self.topViewTop.constant = -y;
         self.topView.alpha =1-(y/(self.topView.bounds.size.height));
         self.topLbl.alpha = 1 - self.topView.alpha;
-        if (y<134) {
+        if (y<kTableViewTopContanst) {
             
-            self.tablviewTop.constant = 134-y;
+            self.tablviewTop.constant = kTableViewTopContanst-y;
+        }else {
+            self.tablviewTop.constant = 0;
         }
+    }else{
+        //滚动特别快是 scrollView.contentOffset 的值跳跃比较大，所以要恢复默认状态，修改快速滑动的位置bug
+        self.topView.alpha = 1;
+        self.topLbl.alpha = 0;
+        self.tablviewTop.constant = kTableViewTopContanst;
+        self.topViewTop.constant = 0;
+        
     }
 }
-
-- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
-    
-    [self scrollViewDidScroll:scrollView];
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    
-    [self scrollViewDidScroll:scrollView];
-}
-
 
 #pragma mark - tableView datasource
 

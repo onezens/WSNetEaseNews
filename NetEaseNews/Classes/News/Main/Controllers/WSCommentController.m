@@ -98,10 +98,21 @@
     
 }
 
+
+- (void)viewWillDisappear:(BOOL)animated{
+    
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBarHidden = NO;
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    
+}
+
 - (void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
+
 }
 
 - (void)loadDataWithID:(NSString *)ID commentType:(WSCommentType)type{

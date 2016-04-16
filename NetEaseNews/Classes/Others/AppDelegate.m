@@ -35,9 +35,17 @@
 
 - (void)initProject {
     
+    //设置图片缓存信息
     [SDImageCache sharedImageCache].maxCacheAge = 7 * 24 * 60 * 60; //7天
     [SDImageCache sharedImageCache].maxCacheSize = 1024 * 1024 * 100; //100MB
     [SDImageCache sharedImageCache].maxMemoryCost = 1024 * 1024 * 40; //40MB
+    
+    //设置状态栏的样式
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    
+    //全局导航栏样式设置
+    [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
 }
 
