@@ -11,6 +11,7 @@
 #import "WSContent.h"
 #import "WSCommentController.h"
 #import "MBProgressHUD.h"
+#import "NetEaseNews-Swift.h"
 
 @interface WSContentController ()<UIWebViewDelegate>
 
@@ -18,12 +19,25 @@
 
 @property (strong, nonatomic) WSContent *content;
 @property (weak, nonatomic) IBOutlet UIButton *bottomCommentBtn;
-
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property (weak, nonatomic) IBOutlet UIButton *topCommentBtn;
+
+@property (strong, nonatomic) UIImageView *imgView;
 @end
 
 @implementation WSContentController
+
+
+- (UIImageView *)imgView{
+    
+    if(_imgView == nil) {
+        UIImageView *imgView = [[UIImageView alloc] init];
+        imgView.center = self.view.center;
+        imgView.bounds = CGRectMake(0, 0, 300, 300);
+        _imgView = imgView;
+    }
+    return _imgView;
+}
 
 
 -(void)viewDidLoad{
@@ -81,23 +95,14 @@
     
     if ([urlStr containsString:@"imgsrc"]) {
         
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"是否保存图片？" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-        
-        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-        UIAlertAction *save = [UIAlertAction actionWithTitle:@"保存" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            
-            
-            
-        }];
-        [alert addAction:cancel];
-        [alert addAction:save];
-        
-        [self presentViewController:alert animated:YES completion:nil];
-        
+        NSRange range = [urlStr rangeOfString:@"imgsrc="];
+        NSString *url = [urlStr substringWithRange:NSMakeRange(range.location + range.length, urlStr.length - range.location - range.length)];
+        [PhotoBrowser showBrowser:url title:self.content.title desc:@"" vc:self sourceView:self.imgView];
     }
     
     return YES;
 }
+
 
 
 - (void)setContent:(WSContent *)content{
