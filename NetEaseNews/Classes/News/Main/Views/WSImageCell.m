@@ -12,7 +12,7 @@
 #import "UIImageView+WebCache.h"
 #import "WSImageContent.h"
 
-@interface WSImageCell ()
+@interface WSImageCell () <UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
@@ -34,11 +34,10 @@
     self.titleLbl.text = self.imageContent.setname;
     self.imageCountLbl.text = [NSString stringWithFormat:@"%ld/%ld",indexPath.item+1,self.imageContent.photos.count];
     self.detailLbl.text = [self.imageContent.photos[indexPath.item] note];
-    
-
-    
     [self.imageView sd_setImageWithURL:[NSURL URLWithString:[self.imageContent.photos[indexPath.item] imgurl]] placeholderImage:[UIImage imageNamed:@"contentview_imagebg_logo"] options:SDWebImageProgressiveDownload | SDWebImageHighPriority completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        _image = image;
     }];
+    
     
     [self loadSubViewFrame];
     
@@ -62,8 +61,7 @@
     self.textScrollView = scrollView;
     scrollView.scrollEnabled = YES;
     scrollView.showsVerticalScrollIndicator = NO;
-//    scrollView.backgroundColor = [UIColor greenColor];
-    
+    scrollView.delegate = self;
     
     //textView
     UIView *textView = [[UIView alloc] init];
@@ -123,9 +121,21 @@
     
     [super layoutSubviews];
     
-    self.textScrollView.frame = CGRectMake(0, self.bounds.size.height * 0.5-20, self.bounds.size.width, self.bounds.size.height*0.5 + 20);
+    self.textScrollView.frame = CGRectMake(0, self.bounds.size.height * 0.5, kScreenWidth, self.bounds.size.height*0.5);
     
     [self loadSubViewFrame];
+}
+
+
+#pragma mark - scrollview delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    //让scrollView偏移到某一位置后不能够继续偏移
+    if (scrollView.contentOffset.y > 180) {
+        [scrollView setContentOffset:CGPointMake(0, 180)];
+    }
+    
 }
 
 

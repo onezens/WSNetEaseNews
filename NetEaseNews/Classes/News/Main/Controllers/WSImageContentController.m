@@ -20,19 +20,13 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *flowLayout;
 @property (weak, nonatomic) IBOutlet UIButton *replyCount;
-
 @property (strong, nonatomic) WSImageContent *imageContent;
+@property (strong, nonatomic) NSIndexPath *currentIndexPath; //cell当前显示的图片
 
 @end
 
 static NSString *CellID = @"imageCell_co";
 @implementation WSImageContentController
-
-
-#pragma mark - collectionView delegate
-
-
-
 
 #pragma mark - collectionView datasource
 
@@ -44,16 +38,11 @@ static NSString *CellID = @"imageCell_co";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     WSImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellID forIndexPath:indexPath];
-    
     cell.imageContent = self.imageContent;
-    
     cell.indexPath = indexPath;
-
-    
+    self.currentIndexPath = indexPath;
     return cell;
 }
-
-
 
 
 #pragma mark - view
@@ -120,11 +109,28 @@ static NSString *CellID = @"imageCell_co";
     
     [self.navigationController popViewControllerAnimated:YES];
 }
+- (IBAction)saveImageToAlbum:(UIButton *)sender {
+    
+    WSImageCell *cell = (WSImageCell *)[_collectionView cellForItemAtIndexPath:self.currentIndexPath];
+    if(cell.image == nil) return;
+    //注意： 保存图片selector必须要用 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo , 否则会crash
+    UIImageWriteToSavedPhotosAlbum(cell.image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+    
+}
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
+    
+    NSString *msg = error == nil ? @"保存图片成功" : @"保存图片失败";
+
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:msg preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *conform = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:conform];
+    [self presentViewController:alert animated:true completion:nil];
+
+}
 
 
 -(void)dealloc{
-    
-//    NSLog(@"%s",__func__);
     
      [[SDImageCache sharedImageCache] setValue:nil forKey:@"memCache"];
 }

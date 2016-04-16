@@ -15,4 +15,6 @@
 
 @property (assign, nonatomic) NSIndexPath *indexPath;
 
+@property (strong, readonly, nonatomic) UIImage *image;
+
 @end

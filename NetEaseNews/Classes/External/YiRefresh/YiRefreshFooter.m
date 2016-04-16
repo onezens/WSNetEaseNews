@@ -60,7 +60,6 @@
         [self beginRefreshing];
         return;
     }
-    NSLog(@"%d, %f, %f,%f",currentPostion,contentHeight-scrollFrameHeight,contentHeight, scrollFrameHeight);
     
 }
 
