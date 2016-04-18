@@ -245,8 +245,10 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 #pragma mark - Show & hide
 
 - (void)show:(BOOL)animated {
+    
     NSAssert([NSThread isMainThread], @"MBProgressHUD needs to be accessed on the main thread.");
 	useAnimation = animated;
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:true];
 	// If the grace time is set postpone the HUD display
 	if (self.graceTime > 0.0) {
         NSTimer *newGraceTimer = [NSTimer timerWithTimeInterval:self.graceTime target:self selector:@selector(handleGraceTimer:) userInfo:nil repeats:NO];
@@ -262,6 +264,7 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 - (void)hide:(BOOL)animated {
     NSAssert([NSThread isMainThread], @"MBProgressHUD needs to be accessed on the main thread.");
 	useAnimation = animated;
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:false];
 	// If the minShow time is set, calculate how long the hud was shown,
 	// and pospone the hiding operation if necessary
 	if (self.minShowTime > 0.0 && showStarted) {

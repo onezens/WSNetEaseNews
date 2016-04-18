@@ -94,7 +94,6 @@
     NSString *urlStr = request.URL.absoluteString;
     
     if ([urlStr containsString:@"imgsrc"]) {
-        
         NSRange range = [urlStr rangeOfString:@"imgsrc="];
         NSString *url = [urlStr substringWithRange:NSMakeRange(range.location + range.length, urlStr.length - range.location - range.length)];
         [PhotoBrowser showBrowser:url title:self.content.title desc:@"" vc:self sourceView:self.imgView];
